@@ -4,7 +4,28 @@
     "http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>
 
-	<package name="index" extends="struts-default">
+	<package name="struts-root" extends="struts-default">
+		
+		<interceptors>
+			<!-- 定义拦截器 -->
+			<interceptor name="urlInterceptor" class="com.star.interceptor.URLInterceptor"/>
+			<!-- 定义拦截器stack -->
+			<interceptor-stack name="stack-root">
+				<interceptor-ref name="urlInterceptor"/>
+				<interceptor-ref name="basicStack"/>
+			</interceptor-stack>
+		</interceptors>
+		
+		<!-- 引用拦截器stack -->
+		<default-interceptor-ref name="stack-root"/>
+	
+		<global-results>
+			<result name="userErro404">/404.jsp</result>
+			<result name="userErro500">/500.jsp</result>
+		</global-results>
+	</package>
+
+	<package name="index" extends="struts-root">
 		<action name="index_home" class="indexAction" method="home">
 			<result name="success">/index.jsp</result>
 		</action>
