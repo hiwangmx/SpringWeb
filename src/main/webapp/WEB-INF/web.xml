@@ -31,8 +31,9 @@
 	<filter>  
         <!-- 配置Struts2核心Filter的名字 -->  
         <filter-name>struts2</filter-name>  
-        <!-- 配置Struts2核心Filter的实现类 -->  
-        <filter-class>org.apache.struts2.dispatcher.FilterDispatcher</filter-class>  
+        <!-- 配置Struts2核心Filter的实现类 -->
+        <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>  
+        <!-- <filter-class>org.apache.struts2.dispatcher.FilterDispatcher</filter-class>  -->  
          <!--  <init-param>  
               配置Struts2框架默认加载的Action包结构，可以没有。  
               <param-name>actionPackages</param-name>  
@@ -80,8 +81,8 @@
 	<!-- contextConfigLocation在 ContextLoaderListener类中的默认值是 /WEB-INF/applicationContext.xml  -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>/WEB-INF/applicationContext.xml</param-value>
-		<!-- <param-value>classpath:applicationContext*.xml</param-value>  -->
+		<!-- <param-value>/WEB-INF/applicationContext.xml</param-value>  -->
+		 <param-value>classpath:applicationContext*.xml</param-value>
 	</context-param> 
 	
 </web-app>

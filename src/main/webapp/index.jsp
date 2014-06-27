@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-sdsd
+<a href="index_home.action?as=ss">sda</a>
 </body>
 </html>
