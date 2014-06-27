@@ -5,7 +5,7 @@
 <struts>
 
 	<package name="index" extends="struts-default">
-		<action name="index_home" class="com.star.action.IndexAction" method="home">
+		<action name="index_home" class="indexAction" method="home">
 			<result name="success">/index.jsp</result>
 		</action>
 	</package>
