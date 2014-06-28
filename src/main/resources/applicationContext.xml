@@ -8,4 +8,8 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 
 
+	<!-- 初始化时执行 -->
+	<bean name="initDataProcessor" class="com.star.processor.InitDataProcessor">
+	</bean>
+
 </beans>

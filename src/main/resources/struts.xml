@@ -19,13 +19,13 @@
 		<!-- 引用拦截器stack -->
 		<default-interceptor-ref name="stack-root"/>
 	
+		<default-action-ref name="index_error404"/>
+	
 		<global-results>
-			<result name="userErro404">/404.jsp</result>
-			<result name="userErro500">/500.jsp</result>
+			<result name="userError404">/404.jsp</result>
+			<result name="userError500">/500.jsp</result>
 		</global-results>
-	</package>
-
-	<package name="index" extends="struts-root">
+		
 		<action name="index_home" class="indexAction" method="home">
 			<result name="success">/index.jsp</result>
 		</action>
