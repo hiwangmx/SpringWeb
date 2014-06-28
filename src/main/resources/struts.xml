@@ -19,6 +19,7 @@
 		<!-- 引用拦截器stack -->
 		<default-interceptor-ref name="stack-root"/>
 	
+		<!-- 默认action -->
 		<default-action-ref name="index_error404"/>
 	
 		<global-results>
