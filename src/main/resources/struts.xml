@@ -22,13 +22,16 @@
 		<default-action-ref name="index_error404"/>
 	
 		<global-results>
+			<result name="index">/index.jsp</result>
 			<result name="userError404">/404.jsp</result>
 			<result name="userError500">/500.jsp</result>
 		</global-results>
 		
 		<action name="index_home" class="indexAction" method="home">
-			<result name="success">/index.jsp</result>
 		</action>
+		<action name="index_error404" class="indexAction" method="error404">
+		</action>
+		
 	</package>
 
 </struts>
