@@ -10,7 +10,7 @@ public class IndexAction extends BaseAction{
 	}
 	
 	public String error404(){
-		return USER_ERROR_404;
+		return ERROR_404;
 	}
 
 }
