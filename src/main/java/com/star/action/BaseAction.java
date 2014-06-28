@@ -18,5 +18,6 @@ public class BaseAction extends ActionSupport {
 	
 	protected static final String USER_ERROR_404 = "userError404";
 	protected static final String USER_ERROR_500 = "userError500";
+	protected static final String INDEX = "index";
 
 }
