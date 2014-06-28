@@ -27,6 +27,16 @@
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
 	
+	<!-- 过滤URL，将对应的.html转换成.action -->
+	<filter>
+		<filter-name>filterUrl</filter-name>
+		<filter-class>com.star.filter.URLFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>filterUrl</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
 	<!-- struts2 配置 -->
 	<filter>  
         <!-- 配置Struts2核心Filter的名字 -->  
@@ -49,7 +59,7 @@
     <filter-mapping>  
         <!-- 配置Struts2的核心FilterDispatcher拦截所有用户请求 -->  
         <filter-name>struts2</filter-name>  
-        <url-pattern>*.html</url-pattern> 
+        <url-pattern>/*</url-pattern> 
         <dispatcher>REQUEST</dispatcher>
         <dispatcher>FORWARD</dispatcher> 
     </filter-mapping>
