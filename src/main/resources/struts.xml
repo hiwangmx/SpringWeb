@@ -8,7 +8,7 @@
 		
 		<interceptors>
 			<!-- 定义拦截器 -->
-			<interceptor name="urlInterceptor" class="com.star.interceptor.URLInterceptor"/>
+			<interceptor name="urlInterceptor" class="com.star.interceptor.UserInterceptor"/>
 			<!-- 定义拦截器stack -->
 			<interceptor-stack name="stack-root">
 				<interceptor-ref name="urlInterceptor"/>
@@ -27,6 +27,11 @@
 			<result name="error404">/404.jsp</result>
 			<result name="error500">/500.jsp</result>
 		</global-results>
+		
+		<!-- 异常错误 -->
+		<global-exception-mappings>
+			<exception-mapping result="error500" exception="java.lang.Exception"></exception-mapping>
+		</global-exception-mappings>
 		
 		<action name="index_home" class="indexAction" method="home">
 		</action>
