@@ -17,9 +17,9 @@ public class URLInterceptor implements Interceptor{
 		
 	}
 
-	public String intercept(ActionInvocation arg0) throws Exception {
+	public String intercept(ActionInvocation actionInvocation) throws Exception {
 		// TODO Auto-generated method stub
-		return null;
+		return actionInvocation.invoke();
 	}
 
 }
