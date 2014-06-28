@@ -9,5 +9,10 @@ public class IndexAction extends BaseAction{
 		System.out.println(request.getParameter("as"));
 		return SUCCESS;
 	}
+	
+	public String error404(){
+		System.out.println(request.getParameter("as"));
+		return SUCCESS;
+	}
 
 }

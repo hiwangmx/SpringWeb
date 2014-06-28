@@ -16,7 +16,7 @@ public class BaseAction extends ActionSupport {
 	protected HttpSession session = request.getSession();
 	protected HttpServletResponse response = ServletActionContext.getResponse();
 	
-	protected static final String USER_ERROR_404 = "userErro404";
-	protected static final String USER_ERROR_500 = "userErro500";
+	protected static final String USER_ERROR_404 = "userError404";
+	protected static final String USER_ERROR_500 = "userError500";
 
 }
