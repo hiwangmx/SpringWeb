@@ -23,22 +23,31 @@ public class URLFilter implements Filter{
 		
 	}
 
+	/**
+	 * 只能使用对应的过滤url
+	 */
 	public void doFilter(ServletRequest request, ServletResponse response,
 			FilterChain filterChain) throws IOException, ServletException {
 		// TODO Auto-generated method stub
 		HttpServletRequest servletRquest = (HttpServletRequest)request;
 		String url = servletRquest.getServletPath();
 		logger.debug("start filter url : " + url);
+		boolean isReplaceUrl = false;
 		ConfigProperties properties = new ConfigProperties();
 		String[] filterUrls =  properties.getFilterUrl();
 		for(String urlType : filterUrls){
 			if(url.endsWith(urlType)){
 				url = url.substring(0, url.length() - urlType.length()) + "action";
+				isReplaceUrl = true;
 				break;
 			}
 		}
-		//servletRquest.getRequestDispatcher(url).forward(request, response);
-		filterChain.doFilter(request, response);
+		if(isReplaceUrl){
+			servletRquest.getRequestDispatcher(url).forward(request, response);
+		}else{
+			servletRquest.getRequestDispatcher("index_error404.action").forward(request, response);
+		}
+		//filterChain.doFilter(request, response);
 	}
 
 	public void init(FilterConfig arg0) throws ServletException {
