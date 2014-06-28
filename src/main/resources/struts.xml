@@ -23,8 +23,8 @@
 	
 		<global-results>
 			<result name="index">/index.jsp</result>
-			<result name="userError404">/404.jsp</result>
-			<result name="userError500">/500.jsp</result>
+			<result name="error404">/404.jsp</result>
+			<result name="error500">/500.jsp</result>
 		</global-results>
 		
 		<action name="index_home" class="indexAction" method="home">
