@@ -33,6 +33,7 @@
 			<exception-mapping result="error500" exception="java.lang.Exception"></exception-mapping>
 		</global-exception-mappings>
 		
+		<!-- index action -->
 		<action name="index_home" class="indexAction" method="home">
 		</action>
 		<action name="index_error404" class="indexAction" method="error404">
