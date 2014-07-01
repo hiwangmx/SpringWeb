@@ -37,6 +37,8 @@
 		</action>
 		<action name="index_error404" class="indexAction" method="error404">
 		</action>
+		<action name="index_error500" class="indexAction" method="error500">
+		</action>
 		
 	</package>
 

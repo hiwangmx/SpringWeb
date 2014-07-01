@@ -12,5 +12,9 @@ public class IndexAction extends BaseAction{
 	public String error404(){
 		return ERROR_404;
 	}
+	
+	public String error500(){
+		return ERROR_500;
+	}
 
 }
