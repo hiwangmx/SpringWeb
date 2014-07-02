@@ -1,5 +1,6 @@
 package com.star.utils;
 
+import java.io.File;
 import java.util.Date;
 import java.util.Properties;
 
@@ -25,6 +26,11 @@ import org.apache.log4j.Logger;
 import com.star.base.BaseException;
 import com.star.config.ConfigProperties;
 
+/**
+ * 发送邮件
+ * @author 王明星 star
+ *
+ */
 public class MailUtils {
 
 	private static Logger logger = Logger.getLogger(MailUtils.class);
@@ -71,10 +77,13 @@ public class MailUtils {
 			for(int index = 0;attachFiles!=null && index<attachFiles.length;index++){
 				logger.info("file : " + attachFiles[index]);
 				BodyPart attachPart = new MimeBodyPart();
-				DataSource dataSource = new FileDataSource(attachFiles[index]);
-				attachPart.setDataHandler(new DataHandler(dataSource));
-				attachPart.setFileName(attachFiles[index]);
-				mulitiPart.addBodyPart(attachPart, index+1);
+				File file = new File(attachFiles[index]);
+				if(file.exists()){
+					DataSource dataSource = new FileDataSource(file);
+					attachPart.setDataHandler(new DataHandler(dataSource));
+					attachPart.setFileName(attachFiles[index]);
+					mulitiPart.addBodyPart(attachPart, index+1);
+				}
 			}
 			
 			message.setContent(mulitiPart);
@@ -123,6 +132,23 @@ public class MailUtils {
 	 */
 	public static void sendHtmlMail(String subject, String html, String toAddressStr, String filePath){
 		sendHtmlMail(subject, html, new String[]{toAddressStr}, new String[]{filePath});
+	}
+	
+	/**
+	 * 异步发送邮件
+	 * @param subject
+	 * @param html
+	 * @param toAddressStr
+	 * @param attachFiles
+	 */
+	public static void sendMailAsynchronous(final String subject, final String html, final String[] toAddressStr, final String[] attachFiles){
+		new Thread(new Runnable() {
+			
+			public void run() {
+				// TODO Auto-generated method stub
+				sendHtmlMail(subject, html, toAddressStr, attachFiles);
+			}
+		});
 	}
 	
 	/**
