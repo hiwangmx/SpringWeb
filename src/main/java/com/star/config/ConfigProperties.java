@@ -12,8 +12,17 @@ public class ConfigProperties {
 
 	private Logger logger = Logger.getLogger(this.getClass());
 
+	/** 过滤路径，其他路径为非法 */
 	public static final String FILTER_URL = "FILTER_URL";
-
+	/** mail config */
+	public static final String MAIL_SMTP_HOST = "mail.smtp.host";
+	public static final String MAIL_SMTP_PORT = "mail.smtp.port";
+	public static final String MAIL_SMTP_AUTH = "mail.smtp.auth";
+	public static final String MAIL_TRANSPORT_PROTOCOL = "mail.transport.protocol";
+	public static final String MAIL_SMTP_SOCKET_FACTORY_CLASS = "mail.smtp.socketFactory.class";
+	public static final String MAIL_SMTP_ADDRESS = "mail.smtp.address";
+	public static final String MAIL_SMTP_PASSWORD = "mail.smtp.password";
+	
 	/**
 	 * 获取配置文件
 	 * @return
@@ -54,5 +63,15 @@ public class ConfigProperties {
 	public Object getVlueByKey(Object key){
 		Properties properties =  this.getConfigProperties();
 		return properties.get(key);
+	}
+	
+	/**
+	 * 获取值
+	 * @param key
+	 * @return
+	 */
+	public String getProperty(String key){
+		Properties properties =  this.getConfigProperties();
+		return properties.getProperty(key);
 	}
 }
