@@ -90,13 +90,10 @@ public class MailUtils {
 			Transport.send(message);
 			logger.info("end send mail ");
 		} catch (AddressException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (BaseException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (MessagingException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -145,7 +142,6 @@ public class MailUtils {
 		new Thread(new Runnable() {
 			
 			public void run() {
-				// TODO Auto-generated method stub
 				sendHtmlMail(subject, html, toAddressStr, attachFiles);
 			}
 		});
