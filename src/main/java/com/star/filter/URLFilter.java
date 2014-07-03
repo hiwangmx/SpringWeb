@@ -33,8 +33,7 @@ public class URLFilter implements Filter{
 		String url = servletRquest.getServletPath();
 		logger.debug("start filter url : " + url);
 		boolean isReplaceUrl = false;
-		ConfigProperties properties = new ConfigProperties();
-		String[] filterUrls =  properties.getFilterUrl();
+		String[] filterUrls =  ConfigProperties.getFilterUrl();
 		for(String urlType : filterUrls){
 			if(url.endsWith(urlType)){
 				url = url.substring(0, url.length() - urlType.length()) + "action";
