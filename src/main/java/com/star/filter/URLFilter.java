@@ -31,7 +31,7 @@ public class URLFilter implements Filter{
 		// TODO Auto-generated method stub
 		HttpServletRequest servletRquest = (HttpServletRequest)request;
 		String url = servletRquest.getServletPath();
-		logger.debug("start filter url : " + url);
+		logger.info("start filter url : " + url);
 		boolean isReplaceUrl = false;
 		String[] filterUrls =  ConfigProperties.getFilterUrl();
 		for(String urlType : filterUrls){
