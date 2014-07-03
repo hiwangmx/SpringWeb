@@ -10,10 +10,11 @@ import com.star.utils.CloseUtils;
 
 public class ConfigProperties {
 
-	private Logger logger = Logger.getLogger(this.getClass());
+	private static Logger logger = Logger.getLogger(ConfigProperties.class);
 
 	/** 过滤路径，其他路径为非法 */
 	public static final String FILTER_URL = "FILTER_URL";
+	
 	/** mail config */
 	public static final String MAIL_SMTP_HOST = "mail.smtp.host";
 	public static final String MAIL_SMTP_PORT = "mail.smtp.port";
@@ -23,16 +24,19 @@ public class ConfigProperties {
 	public static final String MAIL_SMTP_ADDRESS = "mail.smtp.address";
 	public static final String MAIL_SMTP_PASSWORD = "mail.smtp.password";
 	
+	/** 默认时间格式 */
+	public static final String DEFAULT_DATE_FORMATER = "defult.date.formater";
+	
 	/**
 	 * 获取配置文件
 	 * @return
 	 */
-	public Properties getConfigProperties() {
+	public static Properties getConfigProperties() {
 		InputStream inputStream = null;
 		Properties properties = new Properties();
 		try {
 			logger.debug("start get config.properties informations");
-			inputStream = this.getClass().getClassLoader()
+			inputStream = ConfigProperties.class.getClassLoader()
 					.getResourceAsStream("config.properties");
 			properties.load(inputStream);
 		} catch (IOException e) {
@@ -48,8 +52,8 @@ public class ConfigProperties {
 	 * 需要跟换的路径
 	 * @return
 	 */
-	public String[] getFilterUrl() {
-		Properties properties =  this.getConfigProperties();
+	public static String[] getFilterUrl() {
+		Properties properties =  getConfigProperties();
 		String urls = properties.getProperty(FILTER_URL);
 		String[] urlArray = urls.split(",");
 		return urlArray;
@@ -60,8 +64,8 @@ public class ConfigProperties {
 	 * @param key
 	 * @return
 	 */
-	public Object getVlueByKey(Object key){
-		Properties properties =  this.getConfigProperties();
+	public static Object getVlueByKey(Object key){
+		Properties properties =  getConfigProperties();
 		return properties.get(key);
 	}
 	
@@ -70,8 +74,8 @@ public class ConfigProperties {
 	 * @param key
 	 * @return
 	 */
-	public String getProperty(String key){
-		Properties properties =  this.getConfigProperties();
+	public static String getProperty(String key){
+		Properties properties =  getConfigProperties();
 		return properties.getProperty(key);
 	}
 }
