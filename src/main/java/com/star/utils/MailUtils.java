@@ -164,14 +164,13 @@ public class MailUtils {
 	 */
 	public static Properties getMailProperties(){
 		Properties properties = new Properties();
-		ConfigProperties configProperties = new ConfigProperties();
-		properties.setProperty(ConfigProperties.MAIL_SMTP_HOST, configProperties.getProperty(ConfigProperties.MAIL_SMTP_HOST));
-		properties.setProperty(ConfigProperties.MAIL_SMTP_PORT, configProperties.getProperty(ConfigProperties.MAIL_SMTP_PORT));
-		properties.setProperty(ConfigProperties.MAIL_SMTP_AUTH, configProperties.getProperty(ConfigProperties.MAIL_SMTP_AUTH));
-		properties.setProperty(ConfigProperties.MAIL_TRANSPORT_PROTOCOL, configProperties.getProperty(ConfigProperties.MAIL_TRANSPORT_PROTOCOL));
-		properties.setProperty(ConfigProperties.MAIL_SMTP_SOCKET_FACTORY_CLASS, configProperties.getProperty(ConfigProperties.MAIL_SMTP_SOCKET_FACTORY_CLASS));
-		properties.setProperty(ConfigProperties.MAIL_SMTP_ADDRESS, configProperties.getProperty(ConfigProperties.MAIL_SMTP_ADDRESS));
-		properties.setProperty(ConfigProperties.MAIL_SMTP_PASSWORD, configProperties.getProperty(ConfigProperties.MAIL_SMTP_PASSWORD));
+		properties.setProperty(ConfigProperties.MAIL_SMTP_HOST, ConfigProperties.getProperty(ConfigProperties.MAIL_SMTP_HOST));
+		properties.setProperty(ConfigProperties.MAIL_SMTP_PORT, ConfigProperties.getProperty(ConfigProperties.MAIL_SMTP_PORT));
+		properties.setProperty(ConfigProperties.MAIL_SMTP_AUTH, ConfigProperties.getProperty(ConfigProperties.MAIL_SMTP_AUTH));
+		properties.setProperty(ConfigProperties.MAIL_TRANSPORT_PROTOCOL, ConfigProperties.getProperty(ConfigProperties.MAIL_TRANSPORT_PROTOCOL));
+		properties.setProperty(ConfigProperties.MAIL_SMTP_SOCKET_FACTORY_CLASS, ConfigProperties.getProperty(ConfigProperties.MAIL_SMTP_SOCKET_FACTORY_CLASS));
+		properties.setProperty(ConfigProperties.MAIL_SMTP_ADDRESS, ConfigProperties.getProperty(ConfigProperties.MAIL_SMTP_ADDRESS));
+		properties.setProperty(ConfigProperties.MAIL_SMTP_PASSWORD, ConfigProperties.getProperty(ConfigProperties.MAIL_SMTP_PASSWORD));
 		return properties;
 	}
 	 
