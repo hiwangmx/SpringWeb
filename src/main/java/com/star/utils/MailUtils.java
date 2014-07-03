@@ -152,6 +152,17 @@ public class MailUtils {
 	}
 	
 	/**
+	 * 异步发送邮件（单个地址，单个附件）
+	 * @param subjec
+	 * @param html
+	 * @param toAddressStr
+	 * @param attachFiles
+	 */
+	public static void sendMailAsynchronous(String subjec, String html, String toAddressStr, String attachFiles){
+		sendMailAsynchronous(subjec, html, new String[]{toAddressStr}, new String[]{attachFiles});
+	}
+	
+	/**
 	 * 获取基本邮件Perperties
 	 * @return
 	 */
@@ -169,7 +180,7 @@ public class MailUtils {
 	}
 	 
 	public static void main(String[] args) {
-		sendHtmlMail("sdsd", "sdsd", "593415494@qq.com", "E:\\11.pdf");
+		sendMailAsynchronous("sdsd", "sdsd", "593415494@qq.com", "E:\\11.pdf");
 	}
 	
 }
