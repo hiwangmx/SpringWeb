@@ -19,7 +19,8 @@ public class DateUtilsTest extends TestCase{
 	}
 	
 	public void testFormatDate(){
-		DateUtils.formateDate(new Date());
+		String str = DateUtils.formateDate(new Date());
+		System.out.println(str);
 	}
 	
 }
