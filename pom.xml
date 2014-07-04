@@ -9,6 +9,7 @@
 	<properties>
 		<org.springframework.version>4.0.5.RELEASE</org.springframework.version>
 		<org.struts.version>2.3.16.3</org.struts.version>
+		<org.hibernate.version>4.3.5.Final</org.hibernate.version>
 		<org.slf4j.version>1.6.1</org.slf4j.version>
 		<java.home>C:\Program Files\Java\jdk1.6.0_10</java.home>
 	</properties>
@@ -91,6 +92,11 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>${org.springframework.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${org.springframework.version}</version>
+		</dependency>
 
 		<!-- Logging -->
 		<dependency>
@@ -143,6 +149,38 @@
 			<version>1.5.2</version>
 		</dependency>
 
+		<!-- junit -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.7</version>
+		</dependency>
+		
+		<!-- hibernate -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>${org.hibernate.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>${org.hibernate.version}</version>
+		</dependency>
+		
+		<!-- mysql connecter -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.31</version>
+		</dependency>
+		<!-- 数据量连接池 -->
+		<dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+			<version>1.4</version>
+		</dependency>
+		
 	</dependencies>
 
 </project>
