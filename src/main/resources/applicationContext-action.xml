@@ -10,6 +10,9 @@
 	<!-- 好像貌似必须使用 scope prototype -->
 	
 	<bean id="indexAction" name="indexAction" class="com.star.action.IndexAction" scope="prototype">
+		<property name="issGroupDao">
+			<ref bean="issGroupDao"/>
+		</property>
 	</bean>
 
 </beans>
