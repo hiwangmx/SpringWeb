@@ -4,6 +4,8 @@
     "http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>
 
+	<constant name="struts.objectFactory" value="spring"></constant>
+
 	<package name="struts-root" extends="struts-default">
 		
 		<interceptors>
