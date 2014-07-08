@@ -9,6 +9,7 @@
 </head>
 <body>
 	出错了，请联系管理员
-	<s:property name="exception.message"/>
+	<s:debug></s:debug>
+	<s:property value="exception.message"/>
 </body>
 </html>
