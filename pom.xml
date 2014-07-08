@@ -122,14 +122,14 @@
 			<version>1.2.16</version>
 			<scope>runtime</scope>
 		</dependency>
-		
+
 		<!-- java mail api -->
 		<dependency>
 			<groupId>javax.mail</groupId>
 			<artifactId>mail</artifactId>
 			<version>1.4.7</version>
 		</dependency>
-		
+
 		<!-- spring context 扩展 -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -140,9 +140,9 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-tx</artifactId>
 			<version>${org.springframework.version}</version>
-	   	</dependency>
-		
-		<!-- 定时任务 Quartz api-->
+		</dependency>
+
+		<!-- 定时任务 Quartz api -->
 		<dependency>
 			<groupId>quartz</groupId>
 			<artifactId>quartz</artifactId>
@@ -155,7 +155,7 @@
 			<artifactId>junit</artifactId>
 			<version>4.7</version>
 		</dependency>
-		
+
 		<!-- hibernate -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
@@ -167,13 +167,14 @@
 			<artifactId>hibernate-core</artifactId>
 			<version>${org.hibernate.version}</version>
 		</dependency>
-		
+
 		<!-- mysql connecter -->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.31</version>
 		</dependency>
+		
 		<!-- 数据量连接池 -->
 		<dependency>
 			<groupId>commons-dbcp</groupId>
@@ -181,6 +182,13 @@
 			<version>1.4</version>
 		</dependency>
 		
+		<!-- annotation -->
+		<dependency>
+			<groupId>javax.annotation</groupId>
+			<artifactId>jsr250-api</artifactId>
+			<version>1.0</version>
+		</dependency>
+
 	</dependencies>
 
 </project>
