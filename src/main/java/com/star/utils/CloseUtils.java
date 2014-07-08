@@ -3,6 +3,8 @@ package com.star.utils;
 import java.io.IOException;
 import java.io.InputStream;
 
+import org.hibernate.Session;
+
 public class CloseUtils {
 
 	/**
@@ -17,6 +19,16 @@ public class CloseUtils {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+		}
+	}
+	
+	/**
+	 * 关闭hibernate session
+	 * @param session
+	 */
+	public static void close(Session session){
+		if(session != null){
+			session.close();
 		}
 	}
 	
