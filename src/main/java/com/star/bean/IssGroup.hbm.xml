@@ -3,7 +3,7 @@
 		"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 		
 <hibernate-mapping>
-	<class name="com.star.bean.IssGroup" table="iss_group" catalog="spring">
+	<class name="com.star.bean.IssGroup" table="iss_group" catalog="iss">
 		<id name="groupId" type="java.lang.String">
 			<column name="group_id" />
 		</id>
