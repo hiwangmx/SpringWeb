@@ -16,6 +16,35 @@
 			<name>value</name>
 			<required>true</required>
 			<rtexprvalue>true</rtexprvalue>
+			<description>
+			<![CDATA[
+				number value 默认为0
+			]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>type</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>
+			<![CDATA[
+				number type: （默认为roundDown）<br/>
+					1. roundCeiling 接近正无穷大的舍入模式 <br/>
+					2. roundDown 接近零的舍入模式<br/>
+					3. roundFloor 接近负无穷大的舍入模式<br/>
+					4. roundHalfDown 向“最接近的”数字舍入，如果与两个相邻数字的距离相等，则为上舍入的舍入模式<br/>
+					5. roundHalfEven 向“最接近的”数字舍入，如果与两个相邻数字的距离相等，则向相邻的偶数舍入<br/>
+					6. roundHalfUp 向“最接近的”数字舍入，如果与两个相邻数字的距离相等，则为向上舍入的舍入模式<br/>
+					7. roundUnnecessary 断言请求的操作具有精确的结果，因此不需要舍入<br/>
+					8. roundUp 舍入远离零的舍入模式<br/>
+			]]>
+			</description>
+		</attribute>
+		<attribute>
+			<name>scale</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>scale integer</description>
 		</attribute>
 	</tag>
 
