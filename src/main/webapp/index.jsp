@@ -18,6 +18,6 @@
 <a href="index_home.html?as=ss">sda</a>
 
 <br>
-<st:number value="1"/>
+<st:number value="1.566" type="roundDown" scale="4"/>
 </body>
 </html>
