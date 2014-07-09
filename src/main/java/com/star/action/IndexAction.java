@@ -2,6 +2,8 @@ package com.star.action;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.star.bean.IssGroup;
 import com.star.dao.IssGroupDao;
 
@@ -9,6 +11,7 @@ public class IndexAction extends BaseAction {
 
 	private static final long serialVersionUID = 1317995267656400289L;
 
+	@Autowired
 	private IssGroupDao issGroupDao;
 
 	private List<IssGroup> listGroup;
