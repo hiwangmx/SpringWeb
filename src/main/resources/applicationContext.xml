@@ -8,7 +8,10 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 
 	<context:annotation-config/>
-
+	
+	<!-- 开启扫描 根据base-package指定的路径，扫描其下所有包含注解的Bean，并自动注入 -->
+  	<context:component-scan base-package="com.star.*" />
+  	
 	<!-- 
 		 cron表达式 按顺序依次为 
 			秒（0~59） 
