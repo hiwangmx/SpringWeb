@@ -41,6 +41,7 @@ public class URLFilter implements Filter{
 				break;
 			}
 		}
+		logger.info("start url : " + url);
 		if(isReplaceUrl){
 			servletRquest.getRequestDispatcher(url).forward(request, response);
 		}else{
