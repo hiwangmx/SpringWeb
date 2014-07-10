@@ -10,6 +10,7 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 
 import com.star.config.ConfigProperties;
@@ -32,6 +33,9 @@ public class URLFilter implements Filter{
 		HttpServletRequest servletRquest = (HttpServletRequest)request;
 		String url = servletRquest.getServletPath();
 		logger.info("start filter url : " + url);
+		if(StringUtils.isEmpty(url) || url.equals("/")){
+			url = "/index_home.html";
+		}
 		boolean isReplaceUrl = false;
 		String[] filterUrls =  ConfigProperties.getFilterUrl();
 		for(String urlType : filterUrls){
