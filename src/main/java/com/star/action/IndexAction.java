@@ -2,7 +2,7 @@ package com.star.action;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.annotation.Resource;
 
 import com.star.bean.IssGroup;
 import com.star.dao.IssGroupDao;
@@ -11,7 +11,7 @@ public class IndexAction extends BaseAction {
 
 	private static final long serialVersionUID = 1317995267656400289L;
 
-	@Autowired
+	@Resource
 	private IssGroupDao issGroupDao;
 
 	private List<IssGroup> listGroup;
@@ -37,12 +37,5 @@ public class IndexAction extends BaseAction {
 		this.listGroup = listGroup;
 	}
 	
-	public IssGroupDao getIssGroupDao() {
-		return issGroupDao;
-	}
-
-	public void setIssGroupDao(IssGroupDao issGroupDao) {
-		this.issGroupDao = issGroupDao;
-	}
 
 }
