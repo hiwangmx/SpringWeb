@@ -5,7 +5,7 @@
 	id="WebApp_ID" version="2.5">
 	
 	<welcome-file-list>
-		<welcome-file>index_home.html</welcome-file>
+		<welcome-file>index_home.jsp</welcome-file>
 	</welcome-file-list>
 	
 	<!-- Reads request input using UTF-8 encoding -->
