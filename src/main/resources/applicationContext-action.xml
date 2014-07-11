@@ -11,5 +11,8 @@
 	
 	<bean id="indexAction" name="indexAction" class="com.star.action.IndexAction" scope="prototype">
 	</bean>
+	
+	<bean id="mapAction" name="mapAction" class="com.star.action.MapAction" scope="prototype">
+	</bean>
 
 </beans>
