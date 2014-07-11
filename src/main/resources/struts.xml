@@ -38,11 +38,15 @@
 		<!-- index action -->
 		<action name="index_home" class="indexAction" method="home">
 		</action>
+		<action name="index" class="indexAction" method="home">
+		</action>
 		<action name="index_error404" class="indexAction" method="error404">
 		</action>
 		<action name="index_error500" class="indexAction" method="error500">
 		</action>
 		
 	</package>
+	
+	<include file="struts-map.xml"></include>
 
 </struts>
