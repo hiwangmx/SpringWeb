@@ -38,8 +38,8 @@ public class BaseDao extends HibernateDaoSupport {
 				throw new Exception("clazz is null");
 			}
 			Session session = getSessionFactory().openSession();
-			String hql = "from " + clazz.getName();
-			hql += " Where " + filed.getName() + " = " + value;
+			String hql = "FROM" + clazz.getName();
+			hql += " WHERE " + filed.getName() + " = " + value;
 			Query query = session.createQuery(hql);
 			list = query.list();
 			CloseUtils.close(session);
@@ -56,8 +56,8 @@ public class BaseDao extends HibernateDaoSupport {
 				throw new Exception("clazz is null");
 			}
 			Session session = getSessionFactory().openSession();
-			String hql = "from " + clazz.getName();
-			hql += " Where " + fieldName + " = " + fieldValue;
+			String hql = "FROM " + clazz.getName();
+			hql += " WHERE " + fieldName + " = " + fieldValue;
 			Query query = session.createQuery(hql);
 			list = query.list();
 			CloseUtils.close(session);
