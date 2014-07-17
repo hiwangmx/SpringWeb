@@ -2,9 +2,6 @@ package com.star.utils;
 
 import java.util.Arrays;
 
-import org.apache.commons.lang3.ArrayUtils;
-import org.apache.commons.lang3.StringUtils;
-
 public class TestUtils {
 
 	public static void main(String[] args) {
