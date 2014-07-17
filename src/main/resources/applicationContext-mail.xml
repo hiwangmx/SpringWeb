@@ -9,17 +9,20 @@
 	
 	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
 		<property name="defaultEncoding" value="UTF-8"/>
+		<!-- 这里可以直接使用  属性 javaMailProperties 其他可以省掉-->
 		<property name="host" value="${mail.smtp.host}"/>
 		<property name="port" value="${mail.smtp.port}"/>
 		<property name="username" value="${mail.smtp.address}"/>
 		<property name="password" value="${mail.smtp.password}"/>
 		<property name="javaMailProperties">
 			<props>
-				<prop key="mail.smtp.auth">true</prop>
-				<prop key="mail.transport.protocol">smtp</prop>
-				<prop key="mail.smtp.socketFactory.class">javax.net.ssl.SSLSocketFactory</prop>
-				<prop key="mail.smtp.address">553613627@qq.com</prop>
-				<prop key="mail.smtp.password">wangmx!@#</prop>
+				<prop key="mail.smtp.host">${mail.smtp.host}</prop>
+				<prop key="mail.smtp.port">${mail.smtp.port}</prop>
+				<prop key="mail.smtp.auth">${mail.smtp.auth}</prop>
+				<prop key="mail.transport.protocol">${mail.transport.protocol}</prop>
+				<prop key="mail.smtp.socketFactory.class">${mail.smtp.socketFactory.class}</prop>
+				<prop key="mail.smtp.address">${mail.smtp.address}</prop>
+				<prop key="mail.smtp.password">${mail.smtp.password}</prop>
 			</props>
 		</property>
 	</bean>
