@@ -17,6 +17,9 @@ public class SpringMailSenderTest extends BaseTest{
 	
 	@Before
 	public void init(){
+		/*
+		 * 这里使用了注解方式，不用注解可以使用下面
+		 */
 		//springMailSender = (SpringMailSender)applicationContext.getBean("springMailSender");
 	}
 	
