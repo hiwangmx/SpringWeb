@@ -4,12 +4,9 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
-import org.springframework.stereotype.Repository;
-
 import com.star.bean.IssGroup;
 import com.star.dao.IssGroupDao;
 
-@Repository
 public class IndexAction extends BaseAction {
 
 	private static final long serialVersionUID = 1317995267656400289L;
