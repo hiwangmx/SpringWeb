@@ -8,17 +8,6 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
 
-	<!-- 读取jdbc.properties配置文件 <context:property-placeholder location="classpath:jdbc.properties" 
-		/> -->
-	<bean id="propertyConfigure"
-		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-		<property name="locations">
-			<list>
-				<value>classpath:jdbc.properties</value>
-			</list>
-		</property>
-	</bean>
-
 	<!-- 配置数据源 -->
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
 		destroy-method="close">
@@ -69,5 +58,9 @@
 
 	<!-- 采用注解方式配置事务 -->
 	<tx:annotation-driven transaction-manager="txManager" />
+	
+	<!-- 开启扫描 根据base-package指定的路径，扫描其下所有包含注解的Bean，并自动注入 -->
+	<!-- 放置这边因为单元测试用 -->
+  	<context:component-scan base-package="com.star.*" />
 	
 </beans>
