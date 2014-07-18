@@ -9,4 +9,5 @@ public interface SpringMailSender {
 	public void remindMailMessage(String userName, String toAddress);
 	public void remindMailMessage(String userName, String[] toAddress);
 	
+	public void sendMimeMail(String fromAddress, String toAddress, String subject, String text, String fileName, String filePath);
 }
