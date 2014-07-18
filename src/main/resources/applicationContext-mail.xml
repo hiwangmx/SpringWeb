@@ -7,6 +7,7 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 	
+	<!-- spring 发送邮件 -->
 	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
 		<property name="defaultEncoding" value="UTF-8"/>
 		<!-- 这里可以直接使用  属性 javaMailProperties 其他可以省掉-->
@@ -24,6 +25,22 @@
 				<prop key="mail.smtp.address">${mail.smtp.address}</prop>
 				<prop key="mail.smtp.password">${mail.smtp.password}</prop>
 			</props>
+		</property>
+	</bean>
+	
+	<!-- 定义模板  提醒邮件-->
+	<bean id="remindUserMail" class="org.springframework.mail.SimpleMailMessage">
+		<property name="from" value="${mail.smtp.address}"/>
+		<property name="to" value="593415494@qq.com"/>
+		<property name="subject" value="提醒邮件"/>
+		<property name="text">
+			<value>
+				<![CDATA[
+					尊敬的用户%s：
+						这个是提醒邮件，提醒时间%s。
+						提醒内容：该下班了！
+				]]>
+			</value>
 		</property>
 	</bean>
 	
