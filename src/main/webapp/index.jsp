@@ -11,12 +11,9 @@
 </head>
 <body>
 
-<s:iterator value="listGroup">
-	${groupId }
-</s:iterator>
-
 <a href="index_home.html?as=ss">sda</a>
-
+<br>
+<a href="user_list.html">用户列表</a>
 <br>
 <st:number value="1.566" type="roundDown" scale="4"/>
 <br>
