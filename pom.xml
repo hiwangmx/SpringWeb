@@ -212,7 +212,12 @@
 			<groupId>org.apache.lucene</groupId>
 			<artifactId>lucene-core</artifactId>
 			<version>4.9.0</version>
-		</dependency> 
+		</dependency>
+		<dependency>
+			<groupId>org.apache.lucene</groupId>
+			<artifactId>lucene-analyzers-stempel</artifactId>
+			<version>4.9.0</version>
+		</dependency>
 
 	</dependencies>
 
