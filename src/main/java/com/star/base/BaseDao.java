@@ -16,46 +16,49 @@ public class BaseDao extends HibernateDaoSupport {
 
 	public List<?> finaAll(Class<?> clazz) {
 		List<?> list = null;
+		Session session = getSessionFactory().openSession();
 		try {
 			if (clazz == null) {
 				throw new Exception("clazz is null");
 			}
-			Session session = getSessionFactory().openSession();
 			String hql = "from " + clazz.getName();
 			Query query = session.createQuery(hql);
 			list = query.list();
-			CloseUtils.close(session);
 		} catch (Exception e) {
 			e.printStackTrace();
+		}finally{
+			CloseUtils.close(session);
 		}
 		return list;
 	}
 	
 	public List<?> finaByField(Class<?> clazz, Field filed, String value){
 		List<?> list = null;
+		Session session = getSessionFactory().openSession();
 		try {
 			if (clazz == null) {
 				throw new Exception("clazz is null");
 			}
-			Session session = getSessionFactory().openSession();
 			String hql = "FROM" + clazz.getName();
 			hql += " WHERE " + filed.getName() + " = " + value;
 			Query query = session.createQuery(hql);
 			list = query.list();
-			CloseUtils.close(session);
 		} catch (Exception e) {
 			e.printStackTrace();
+		}finally{
+			CloseUtils.close(session);
 		}
 		return list;
 	}
 	
+	@SuppressWarnings("unchecked")
 	public <T> List<T> findByField(Class<T> clazz, String fieldName, String fieldValue){
 		List<T> list = null;
+		Session session = getSessionFactory().openSession();
 		try {
 			if (clazz == null) {
 				throw new Exception("clazz is null");
 			}
-			Session session = getSessionFactory().openSession();
 			String hql = "FROM " + clazz.getName();
 			hql += " WHERE " + fieldName + " = " + fieldValue;
 			Query query = session.createQuery(hql);
@@ -63,6 +66,8 @@ public class BaseDao extends HibernateDaoSupport {
 			CloseUtils.close(session);
 		} catch (Exception e) {
 			e.printStackTrace();
+		}finally{
+			CloseUtils.close(session);
 		}
 		return list;
 	}
