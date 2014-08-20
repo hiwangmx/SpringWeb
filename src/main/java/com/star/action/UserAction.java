@@ -5,7 +5,7 @@ import java.util.List;
 import javax.annotation.Resource;
 
 import com.star.bean.User;
-import com.star.dao.UserDAO;
+import com.star.service.UserService;
 
 public class UserAction extends BaseAction {
 
@@ -14,10 +14,10 @@ public class UserAction extends BaseAction {
 	private List<User> userList;
 
 	@Resource
-	private UserDAO userDao;
+	private UserService userService;
 
 	public String userList() {
-		userList = userDao.finaAll();
+		userList = userService.listAll();
 		return SUCCESS;
 	}
 
