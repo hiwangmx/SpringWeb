@@ -18,5 +18,7 @@
 <st:number value="1.566" type="roundDown" scale="4"/>
 <br>
 <a href="map.html">百度地图</a>
+<br>
+<a href="demo_extDemo.html">extDemo</a>
 </body>
 </html>
