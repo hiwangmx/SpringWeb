@@ -17,5 +17,8 @@
 	
 	<bean id="userAction" name="userAction" class="com.star.action.UserAction" scope="prototype">
 	</bean>
+	
+	<bean id="demoAction" name="demoAction" class="com.star.action.DemoAction" scope="prototype">
+	</bean>
 
 </beans>

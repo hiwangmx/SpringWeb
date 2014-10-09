@@ -49,5 +49,6 @@
 	
 	<include file="struts-map.xml"></include>
 	<include file="struts-user.xml"></include>
+	<include file="struts-demo.xml"></include>
 
 </struts>
