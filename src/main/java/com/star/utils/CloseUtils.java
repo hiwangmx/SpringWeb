@@ -4,12 +4,43 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 
 import org.apache.lucene.index.IndexWriter;
+import org.apache.tools.zip.ZipFile;
 import org.hibernate.Session;
+import org.hibernate.StatelessSession;
 
 public class CloseUtils {
 
+	/**
+	 * close outputStream
+	 * @param outputStream
+	 */
+	public static void close(OutputStream outputStream){
+		if(outputStream != null){
+			try {
+				outputStream.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	/**
+	 * clsoe zipFile
+	 * @param zipFile
+	 */
+	public static void close(ZipFile zipFile){
+		if(zipFile != null){
+			try {
+				zipFile.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
 	/**
 	 * close inputstream
 	 * @param inputStream
@@ -19,7 +50,6 @@ public class CloseUtils {
 			try {
 				inputStream.close();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -36,6 +66,16 @@ public class CloseUtils {
 	}
 	
 	/**
+	 * 关闭hibernate StatelessSession
+	 * @param session
+	 */
+	public static void close(StatelessSession session){
+		if(session != null){
+			session.close();
+		}
+	}
+	
+	/**
 	 * 关闭BufferedReader
 	 * @param reader
 	 */
@@ -44,7 +84,6 @@ public class CloseUtils {
 			try {
 				reader.close();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -59,7 +98,6 @@ public class CloseUtils {
 			try {
 				inputStreamReader.close();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -74,7 +112,6 @@ public class CloseUtils {
 			try {
 				indexWriter.close();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}

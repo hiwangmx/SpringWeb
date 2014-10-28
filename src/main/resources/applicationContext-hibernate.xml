@@ -33,6 +33,7 @@
 			<list>
 				<!-- 配置所有PO映射文件 -->
 				<value>com/star/bean/user.hbm.xml</value>
+				<value>com/star/bean/ZipData.hbm.xml</value>
 			</list>
 		</property>
 
@@ -41,7 +42,7 @@
 			<props>
 				<prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
 				<prop key="hibernate.hbm2ddl.auto">update</prop>
-				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.show_sql">false</prop>
 				<prop key="hibernate.format_sql">true</prop>
 				<prop key="hibernate.cache.use_second_level_cache">true</prop>
 				<prop key="hibernate.cache.use_query_cache">false</prop>

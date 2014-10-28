@@ -1,6 +1,7 @@
 package com.star.utils;
 
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -29,4 +30,18 @@ public class DateUtils {
 		return formateDate(date, ConfigProperties.getProperty(ConfigProperties.DEFAULT_DATE_FORMATER));
 	}
 	
+	public static Date formateDate(String dateStr, String formater){
+		DateFormat dateFormat = new SimpleDateFormat(formater);
+		Date date = null;
+		try {
+			date = dateFormat.parse(dateStr);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		return date;
+	}
+	
+	public static Date formateDate(String dateStr){
+		return formateDate(dateStr, ConfigProperties.getProperty(ConfigProperties.DEFAULT_DATE_FORMATER));
+	}
 }
