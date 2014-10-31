@@ -4,11 +4,8 @@ import java.util.List;
 
 import com.star.bean.ZipData;
 
-public interface ZipDataDao {
+public interface ZipDataDaoO {
 
-	void add(ZipData zipData);
-	
 	void addBatch(List<ZipData> list);
 	
-	void exec3(List<ZipData> list);
 }

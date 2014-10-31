@@ -24,7 +24,7 @@ public class ZipDemoAnt {
 				while(( sb = bufferedReader.readLine()) != null){
 					String[] sigleStr = sb.split("\t");
 					for(String tmpStr : sigleStr){
-						System.out.println(tmpStr);
+						//System.out.println(tmpStr);
 					}
 					//System.out.println(sb);
 					sb = "";

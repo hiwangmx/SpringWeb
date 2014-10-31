@@ -7,4 +7,6 @@ public interface ZipDataService {
 	void add(ZipData zipData);
 
 	void addBatch(String fileName);
+	
+	 void threadAdd(String fileName);
 }

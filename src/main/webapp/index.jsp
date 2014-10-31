@@ -20,5 +20,7 @@
 <a href="map.html">百度地图</a>
 <br>
 <a href="demo_extDemo.html">extDemo</a>
+<br>
+<a href="demo_chartDemo.html">chartDemo</a>
 </body>
 </html>

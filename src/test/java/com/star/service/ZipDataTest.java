@@ -44,10 +44,20 @@ public class ZipDataTest  extends BaseTest{
 	
 	@Test
 	public void addBatch(){
-		long startTime = System.currentTimeMillis();
-		zipDataService.addBatch("E://进程监控（服务，端口，进程）1.zip");
-		long endTime = System.currentTimeMillis();
-		System.out.println("运行时间：" + (endTime - startTime )/1000 + "s");
+		zipDataService.threadAdd("E://进程监控（服务，端口，进程）.zip");
+	}
+	
+	class MyThread extends Thread{
+		
+		@Override
+		public void run() {
+			// TODO Auto-generated method stub
+			long startTime = System.currentTimeMillis();
+			zipDataService.addBatch("E://进程监控（服务，端口，进程）.zip");
+			long endTime = System.currentTimeMillis();
+			System.out.println("运行时间：" + (endTime - startTime )/1000 + "s");
+		}
+		
 	}
 	
 	

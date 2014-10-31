@@ -7,5 +7,9 @@
 		<action name="demo_extDemo" class="demoAction" method="extDemo">
 			<result name="success">extDemo.jsp</result>
 		</action>
+		
+		<action name="demo_chartDemo" class="demoAction" method="chartDemo">
+			<result name="success">chart/chart1.jsp</result>
+		</action>
 	</package>
 </struts>

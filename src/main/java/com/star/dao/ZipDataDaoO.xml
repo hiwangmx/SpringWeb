@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.star.dao.ZipDataDaoO">
+
+	<resultMap type="com.star.bean.ZipData" id="BaseResultMap">
+		<id column="id" property="id" jdbcType="VARCHAR" />
+		<result column="state" property="state" jdbcType="SMALLINT" />
+		<result column="memory" property="memory" jdbcType="BIGINT" />
+		<result column="pid" property="pid" jdbcType="VARCHAR" />
+		<result column="cpu" property="cpu" jdbcType="BIGINT" />
+		<result column="name" property="name" jdbcType="VARCHAR" />
+		<result column="extime" property="extime" jdbcType="TIMESTAMP" />
+	</resultMap>
+
+	<insert id="addBatch" parameterType="java.util.List">
+		insert into zip_data (id,state,memory,pid,cpu,name,extime)
+		values
+		<foreach collection="list" item="item" index="index"
+			separator=",">
+			(#{item.id},#{item.state},#{item.memory},#{item.pid},#{item.cpu},#{item.name},#{item.extime})
+		</foreach>
+	</insert>
+
+</mapper>
