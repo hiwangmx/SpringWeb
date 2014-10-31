@@ -22,10 +22,10 @@ public class DemoAction extends BaseAction{
 	public String chartDemo(){
 		
 		//zipDataService.threadAdd("E://进程监控（服务，端口，进程）.zip");
-		long startTime = System.currentTimeMillis();
+		/*long startTime = System.currentTimeMillis();
 		zipDataServiceO.addBatch("E://进程监控（服务，端口，进程）.zip");
 		long endTime = System.currentTimeMillis();
-		System.out.println("运行时间：" + (endTime - startTime )/1000 + "s");
+		System.out.println("运行时间：" + (endTime - startTime )/1000 + "s");*/
 		return SUCCESS;
 	}
 

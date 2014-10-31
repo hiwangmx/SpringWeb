@@ -29,28 +29,42 @@ public class URLFilter implements Filter{
 	 */
 	public void doFilter(ServletRequest request, ServletResponse response,
 			FilterChain filterChain) throws IOException, ServletException {
-		// TODO Auto-generated method stub
 		HttpServletRequest servletRquest = (HttpServletRequest)request;
 		String url = servletRquest.getServletPath();
 		logger.info("start filter url : " + url);
 		if(StringUtils.isEmpty(url) || url.equals("/")){
 			url = "/index_home.html";
 		}
-		boolean isReplaceUrl = false;
-		String[] filterUrls =  ConfigProperties.getFilterUrl();
-		for(String urlType : filterUrls){
+		boolean isNotFilterFlag = false;
+		String[] notFilterUrls = ConfigProperties.getNotFilterUrl();
+		for(String urlType : notFilterUrls){
 			if(url.endsWith(urlType)){
-				url = url.substring(0, url.length() - urlType.length()) + "action";
-				isReplaceUrl = true;
+				servletRquest.getRequestDispatcher(url).forward(request, response);
+				isNotFilterFlag = true;
 				break;
 			}
 		}
-		logger.info("start url : " + url);
-		if(isReplaceUrl){
-			servletRquest.getRequestDispatcher(url).forward(request, response);
+		
+		if(isNotFilterFlag){
+			filterChain.doFilter(request, response);
 		}else{
-			servletRquest.getRequestDispatcher("index_error404.action").forward(request, response);
+			boolean isReplaceUrl = false;
+			String[] filterUrls =  ConfigProperties.getFilterUrl();
+			for(String urlType : filterUrls){
+				if(url.endsWith(urlType)){
+					url = url.substring(0, url.length() - urlType.length()) + "action";
+					isReplaceUrl = true;
+					break;
+				}
+			}
+			logger.info("start url : " + url);
+			if(isReplaceUrl){
+				servletRquest.getRequestDispatcher(url).forward(request, response);
+			}else{
+				servletRquest.getRequestDispatcher("index_error404.action").forward(request, response);
+			}
 		}
+		
 		//filterChain.doFilter(request, response);
 	}
 

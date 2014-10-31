@@ -14,6 +14,7 @@ public class ConfigProperties {
 
 	/** 过滤路径，其他路径为非法 */
 	public static final String FILTER_URL = "FILTER_URL";
+	public static final String NOT_FILTER_URL = "NOT_FILTER_URL";
 	
 	/** mail config */
 	public static final String MAIL_SMTP_HOST = "mail.smtp.host";
@@ -55,6 +56,17 @@ public class ConfigProperties {
 	public static String[] getFilterUrl() {
 		Properties properties =  getConfigProperties();
 		String urls = properties.getProperty(FILTER_URL);
+		String[] urlArray = urls.split(",");
+		return urlArray;
+	}
+	
+	/**
+	 * 需要跟换的路径
+	 * @return
+	 */
+	public static String[] getNotFilterUrl() {
+		Properties properties =  getConfigProperties();
+		String urls = properties.getProperty(NOT_FILTER_URL);
 		String[] urlArray = urls.split(",");
 		return urlArray;
 	}
