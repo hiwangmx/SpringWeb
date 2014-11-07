@@ -26,6 +26,12 @@
 	</bean>
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<!-- 设置自定义的namingStrategy -->
+		<property name="namingStrategy">
+			<bean class="com.star.bean.MyNamingStrategy">
+			</bean>
+		</property>
+		
 		<!-- 配置SessionFactory所需的数据源，注入上面定义的dataSource -->
 		<property name="dataSource" ref="dataSource" />
 		<!-- mappingResources属性用来列出全部映射文件 -->
@@ -59,9 +65,9 @@
 
 	<!-- 采用注解方式配置事务 -->
 	<tx:annotation-driven transaction-manager="txManager" />
-	
+
 	<!-- 开启扫描 根据base-package指定的路径，扫描其下所有包含注解的Bean，并自动注入 -->
 	<!-- 放置这边因为单元测试用 -->
-  	<context:component-scan base-package="com.star.*" />
-	
+	<context:component-scan base-package="com.star.*" />
+
 </beans>

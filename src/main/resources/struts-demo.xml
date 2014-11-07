@@ -12,4 +12,10 @@
 			<result name="success">chart/chart1.jsp</result>
 		</action>
 	</package>
+	
+	<package name="struts-demo-json" extends="json-default">
+		<action name="demo_todayChart" class="demoAction" method="todayChart">
+			<result name="success" type="json"></result>
+		</action>
+	</package>
 </struts>

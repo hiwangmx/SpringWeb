@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.math.BigInteger;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Enumeration;
 import java.util.List;
 import java.util.UUID;
@@ -37,6 +36,10 @@ public class ZipDataServiceImpl implements ZipDataService {
 		zipDataDao.add(zipData);
 	}
 
+	public List<ZipData> find(){
+		return zipDataDao.find();
+	}
+	
 	public void addBatch(String fileName) {
 
 		try {
@@ -73,7 +76,7 @@ public class ZipDataServiceImpl implements ZipDataService {
 						if (listZip.size() == 50000) {
 							//threadAdd(listZip);
 							//zipDataDao.addBatch(listZip);
-							zipDataDao.exec3(listZip);
+							zipDataDao.addBatch1(listZip);
 							listZip = new ArrayList<ZipData>();
 						}
 					}
@@ -81,7 +84,7 @@ public class ZipDataServiceImpl implements ZipDataService {
 			}
 			//threadAdd(listZip);
 			//zipDataDao.addBatch(listZip);
-			zipDataDao.exec3(listZip);
+			zipDataDao.addBatch1(listZip);
 		} catch (ZipException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -90,10 +93,10 @@ public class ZipDataServiceImpl implements ZipDataService {
 	}
 
 	public void threadAdd(String fileName) {
-		ExecutorService pool = Executors.newFixedThreadPool(10);
-		for (int i = 0; i < 10; i ++) {
+		ExecutorService pool = Executors.newFixedThreadPool(1);
+		for (int i = 0; i < 1; i ++) {
 			MyThread tt = new MyThread(fileName);
-			//tt.start();
+			tt.start();
 			pool.execute(tt);
 		}
 		pool.shutdown();
