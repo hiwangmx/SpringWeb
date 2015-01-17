@@ -11,6 +11,7 @@ import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.SQLQuery;
 import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.hibernate.StatelessSession;
 import org.hibernate.Transaction;
 import org.springframework.jdbc.object.SqlQuery;
@@ -134,10 +135,10 @@ public class ZipDataDaoImp extends BaseDao implements ZipDataDao {
 		if(list == null || list.size() == 0){
 			return;
 		}
+		SessionFactory sf = getSessionFactory();
 		StatelessSession session = getSessionFactory().openStatelessSession();
 		StringBuilder sb = new StringBuilder();
 		 sb.append("INSERT INTO zip_data (id , state, memory, pid, cpu,name,extime) VALUES ");
-		
 		try {
 			for(int i=0;i<list.size();){
 				
