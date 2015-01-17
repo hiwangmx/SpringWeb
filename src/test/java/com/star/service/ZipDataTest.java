@@ -1,28 +1,11 @@
 package com.star.service;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.io.UnsupportedEncodingException;
 import java.math.BigInteger;
 import java.util.Date;
-import java.util.zip.ZipEntry;
-import java.util.zip.ZipInputStream;
+import java.util.List;
 
 import javax.annotation.Resource;
 
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.StringEntity;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.protocol.HTTP;
-import org.apache.http.util.EntityUtils;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -63,7 +46,7 @@ public class ZipDataTest extends BaseTest {
 
 	@Test
 	public void addBatch() {
-		// List<ZipData> zipData = zipDataService.find();
+	 List<ZipData> zipData = zipDataService.find();
 
 		// zipDataService.threadAdd("E://进程监控（服务，端口，进程）.zip");
 

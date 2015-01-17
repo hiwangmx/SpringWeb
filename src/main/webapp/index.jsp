@@ -21,6 +21,6 @@
 <br>
 <a href="demo_extDemo.html">extDemo</a>
 <br>
-<a href="demo_chartDemo.html">chartDemo</a>
+<a href="demo_chartDemo.html?sss=20">chartDemo</a>
 </body>
 </html>
