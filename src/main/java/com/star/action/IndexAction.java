@@ -28,6 +28,10 @@ public class IndexAction extends BaseAction {
 	public String error500() {
 		return ERROR_500;
 	}
+	
+	public String websocket(){
+		return SUCCESS;
+	}
 
 	public List<IssGroup> getListGroup() {
 		return listGroup;

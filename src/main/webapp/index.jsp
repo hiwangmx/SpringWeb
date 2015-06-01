@@ -8,6 +8,44 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Insert title here</title>
+
+<script type="text/javascript">
+
+var webSocket = new WebSocket('ws://localhost:8081/SpringWeb/websocket');
+
+  webSocket.onerror = function(event) {
+    onError(event)
+  };
+
+  webSocket.onopen = function(event) {
+    onOpen(event)
+  };
+
+  webSocket.onmessage = function(event) {
+    onMessage(event)
+  };
+
+  function onMessage(event) {
+    document.getElementById('messages').innerHTML
+      += '<br />' + event.data;
+  }
+
+  function onOpen(event) {
+    document.getElementById('messages').innerHTML
+      = 'Connection established';
+  }
+
+  function onError(event) {
+    alert(event.data);
+  }
+
+  function start() {
+    webSocket.send('hello');
+    return false;
+  }
+
+</script>
+
 </head>
 <body>
 
@@ -22,5 +60,9 @@
 <a href="demo_extDemo.html">extDemo</a>
 <br>
 <a href="demo_chartDemo.html?sss=20">chartDemo</a>
+<br>
+
+<div id="messages"></div>
+<input type="submit" value="Start" onclick="start()" />
 </body>
 </html>

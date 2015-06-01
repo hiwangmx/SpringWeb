@@ -44,6 +44,9 @@ public class URLFilter implements Filter{
 				break;
 			}
 		}
+		if(url.indexOf("websocket") >=0 ){
+			isNotFilterFlag = true;
+		}
 		
 		if(isNotFilterFlag){
 			filterChain.doFilter(request, response);
@@ -65,7 +68,7 @@ public class URLFilter implements Filter{
 			}
 		}
 		
-		//filterChain.doFilter(request, response);
+		filterChain.doFilter(request, response);
 	}
 
 	public void init(FilterConfig arg0) throws ServletException {

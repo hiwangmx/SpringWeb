@@ -26,10 +26,13 @@ public class DateUtilsTest extends TestCase{
 	}
 	
 	public static void main(String[] args) {
-		TimeZone time = TimeZone.getTimeZone("GMT-8");
-		Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("GMT-8"));
-		cal.setTimeZone(TimeZone.getTimeZone("GMT-8"));
-		System.out.println(time.getID() + "");
+		//TimeZone time = TimeZone.getTimeZone("GMT-8");
+		//Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("GMT-8"));
+		//cal.setTimeZone(TimeZone.getTimeZone("GMT-8"));
+		//System.out.println(time.getID() + "");
+
+		System.out.println(10 + -1);
+		
 	}
 	
 }

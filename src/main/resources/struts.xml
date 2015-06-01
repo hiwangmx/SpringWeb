@@ -5,6 +5,7 @@
 <struts>
 
 	<constant name="struts.objectFactory" value="spring"></constant>
+	<constant name="struts.action.excludePattern" value="ws://*"></constant>
 
 	<package name="struts-root" extends="struts-default">
 		
