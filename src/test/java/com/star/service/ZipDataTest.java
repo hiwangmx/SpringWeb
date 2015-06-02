@@ -45,7 +45,7 @@ public class ZipDataTest extends BaseTest {
 	}
 
 	@Test
-	public void addBatch() {
+	public void addBatch() { 
 	 List<ZipData> zipData = zipDataService.find();
 
 		// zipDataService.threadAdd("E://进程监控（服务，端口，进程）.zip");

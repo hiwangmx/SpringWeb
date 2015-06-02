@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+	
+	<welcome-file-list>
+		<welcome-file>index_home.jsp</welcome-file>
+	</welcome-file-list>
+	
+	<!-- Reads request input using UTF-8 encoding -->
+	<filter>
+		<filter-name>characterEncodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+		<init-param>
+			<param-name>forceEncoding</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>characterEncodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<!-- 过滤URL，将对应的.html转换成.action -->
+	<filter>
+		<filter-name>filterUrl</filter-name>
+		<filter-class>com.star.filter.URLFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>filterUrl</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<!-- struts2 配置 -->
+	<filter>  
+        <!-- 配置Struts2核心Filter的名字 -->  
+        <filter-name>struts2</filter-name>  
+        <!-- 配置Struts2核心Filter的实现类 -->
+        <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>  
+        <!-- <filter-class>org.apache.struts2.dispatcher.FilterDispatcher</filter-class>  -->  
+         <!--  <init-param>  
+              配置Struts2框架默认加载的Action包结构，可以没有。  
+              <param-name>actionPackages</param-name>  
+              <param-value>org.apache.struts2.showcase.person</param-value>  
+          </init-param>  
+          配置Struts2框架的配置提供者类  
+          <init-param>  
+              <param-name>configProviders</param-name>  
+              <param-value>lee.MyConfigurationProvider</param-value>  
+          </init-param>   -->
+    </filter>  
+    <!-- 配置Filter拦截的URL -->  
+    <filter-mapping>  
+        <!-- 配置Struts2的核心FilterDispatcher拦截所有用户请求 -->  
+        <filter-name>struts2</filter-name>  
+        <url-pattern>*.action</url-pattern> 
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher> 
+    </filter-mapping>
+	
+	<!-- spring 配置 -->
+	<!-- Handles all requests into the application -->
+	<!-- 
+	<servlet>
+		<servlet-name>Spring MVC Dispatcher Servlet</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>
+				/WEB-INF/applicationContext.xml
+			</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Spring MVC Dispatcher Servlet</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+	 -->
+	 
+	<listener>
+		<listener-class>
+			org.springframework.web.context.ContextLoaderListener
+		</listener-class>
+	</listener> 
+	<!-- contextConfigLocation在 ContextLoaderListener类中的默认值是 /WEB-INF/applicationContext.xml  -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<!-- <param-value>/WEB-INF/applicationContext.xml</param-value>  -->
+		 <param-value>classpath:applicationContext*.xml</param-value>
+	</context-param> 
+</web-app>
