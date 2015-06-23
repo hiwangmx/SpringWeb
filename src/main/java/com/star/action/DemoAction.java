@@ -12,6 +12,8 @@ import javax.annotation.Resource;
 import org.json.JSONArray;
 
 import com.star.bean.Chart;
+import com.star.pojo.ArithmeticCalculator;
+import com.star.pojo.UnitCalculator;
 import com.star.service.ZipDataService;
 import com.star.service.ZipDataServiceO;
 
@@ -24,7 +26,7 @@ public class DemoAction extends BaseAction {
 
 	@Resource
 	private ZipDataServiceO zipDataServiceO;
-
+	
 	private String type;
 
 	private String data;
@@ -36,6 +38,7 @@ public class DemoAction extends BaseAction {
 	private Integer sss;
 
 	public String extDemo() {
+		
 		return SUCCESS;
 	};
 

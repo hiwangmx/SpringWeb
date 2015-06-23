@@ -13,6 +13,7 @@ public class UserDAOImpl extends BaseDao implements UserDAO{
 
 	public List<User> finaAll() {
 		// TODO Auto-generated method stub
+		@SuppressWarnings("unchecked")
 		List<User> userList = (List<User>) finaAll(User.class);
 		return userList;
 	}

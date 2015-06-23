@@ -25,5 +25,21 @@ public class Chart {
 	public void setData(List<Map<String, Object>> data) {
 		this.data = data;
 	}
+
+	public Long getPointInterval() {
+		return pointInterval;
+	}
+
+	public void setPointInterval(Long pointInterval) {
+		this.pointInterval = pointInterval;
+	}
+
+	public Long getPointStart() {
+		return pointStart;
+	}
+
+	public void setPointStart(Long pointStart) {
+		this.pointStart = pointStart;
+	}
 	
 }

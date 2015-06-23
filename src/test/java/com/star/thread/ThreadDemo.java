@@ -92,6 +92,8 @@ public class ThreadDemo {
 		// singleThreadPool();
 		// fixedThreadPool();
 		//cachedThreadPool();
-		scheduledThreadPool();
+		//scheduledThreadPool();
+		
+		System.out.println(Double.valueOf(Math.random() * 10).intValue());
 	}
 }

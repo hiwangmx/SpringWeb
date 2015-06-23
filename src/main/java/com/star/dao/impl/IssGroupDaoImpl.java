@@ -13,6 +13,7 @@ public class IssGroupDaoImpl extends BaseDao implements IssGroupDao{
 
 	public static final String ISS_GROUP = "com.star.bean.IssGroup";
 	
+	@SuppressWarnings("unchecked")
 	public List<IssGroup> findAll(){
 		return (List<IssGroup>)finaAll(IssGroup.class);
 	}
