@@ -31,8 +31,23 @@ public class DateUtilsTest extends TestCase{
 		//cal.setTimeZone(TimeZone.getTimeZone("GMT-8"));
 		//System.out.println(time.getID() + "");
 
-		System.out.println(10 + -1);
+		//System.out.println(10 + -1);
 		
+		String sss = "你好这是${name}sadss${name}";
+		
+		while(true){
+			int index = sss.indexOf("${");
+			System.out.println(index);
+			if(index >= 0){
+				int lastIndex = sss.indexOf("}");
+				String key = sss.substring(index + 2, lastIndex);
+				System.out.println(sss.substring(index + 2, lastIndex));
+				sss = sss.replace("${" + key + "}", "wangmx");
+			}else{
+				break;
+			}
+		}
+		System.out.println(sss);
 	}
 	
 }

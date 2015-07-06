@@ -12,4 +12,6 @@ public @interface LogAnnotation {
 
 	String value();
 	
+	
+	
 }

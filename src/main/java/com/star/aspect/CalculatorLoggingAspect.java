@@ -43,6 +43,7 @@ public class CalculatorLoggingAspect {
 		try {
 			Method method = clazz.getDeclaredMethod(joinPoint.getSignature().getName(), double.class, double.class);
 			LogAnnotation logAnnotation = method.getAnnotation(LogAnnotation.class);
+			
 			System.out.println(logAnnotation.value());
 		} catch (NoSuchMethodException e) {
 		} catch (SecurityException e) {
